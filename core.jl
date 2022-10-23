@@ -18,15 +18,6 @@ function countries(;dict::Bool=false)
 end
 
 """
-Get a list of species by country isocode. 
-If you don't have an isocode, check countries()
-"""
-function species_by_country(isocode::String;dict::Bool=false)
-    query = "/api/v3/country/getspecies/"*isocode*"?token="*token
-    return toprocess(query, dict)
-end
-
-"""
 Get a list of regions
 """
 function regions(;dict::Bool=false)

@@ -11,6 +11,7 @@ function test()
     # species
     species_count("europe")
     species_citation("Quercus robur","europe"; dict = true)
+    species_narrative("Cryptocarya alba")
     ## if you got here, then:
     print("Test successful")    
 end
