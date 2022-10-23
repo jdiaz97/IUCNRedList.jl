@@ -5,6 +5,6 @@ Are you a data scientist and are you working in biodiversity? you might find thi
 
 ## What this does
 
-Implement all* of the functions of the IUCN Red List
+Implements all* of the functionality of the IUCN Red List API in an easy to use way.
 
 ## Functions

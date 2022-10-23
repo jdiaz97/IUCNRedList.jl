@@ -40,9 +40,6 @@ function species_citation(id::Int64,region::String="";dict::Bool=false)
     return toprocess(query, dict)    
 end
 
-species_citation(181008073)
-
-
 """
 Get narrative information about individual species. \n
 Please be aware that the text contains HTML markup in some places for formatting purposes. \\
