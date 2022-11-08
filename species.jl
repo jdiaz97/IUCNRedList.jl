@@ -7,12 +7,13 @@ Total Species count. \n
 If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that. \\
 """
-function species_count(region::String="")
-    if region == ""
-        query = "/api/v3/speciescount?token="*token
-    else
-        query = "/api/v3/speciescount/region/"*region*"?token="*token
-    end
+function species_count()
+    query = "/api/v3/speciescount?token="*token
+    return toprocess(query, true)
+end
+
+function species_count(region::String)
+    query = "/api/v3/speciescount/region/"*region*"?token="*token
     return toprocess(query, true)
 end
 
@@ -22,21 +23,25 @@ Use scientific name or ID. \\
 If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that 
 """
-function species_citation(name::String,region::String="";dict::Bool=false)
-    if region == ""
-        query = "/api/v3/species/citation/"*name*"?token="*token
-    else
-        query = "/api/v3/species/citation/"*name*"/region/"*region*"?token="*token
-    end
+function species_citation(name::String;dict::Bool=false)
+    query = "/api/v3/species/citation/"*name*"?token="*token
     return toprocess(query, dict)    
 end
-function species_citation(id::Int64,region::String="";dict::Bool=false)
+
+function species_citation(name::String,region::String;dict::Bool=false)
+    query = "/api/v3/species/citation/"*name*"/region/"*region*"?token="*token
+    return toprocess(query, dict)    
+end
+
+function species_citation(id::Int64;dict::Bool=false)
     id = string(id)
-    if region == ""
-        query = "/api/v3/species/citation/id/"*id*"?token="*token
-    else
-        query = "/api/v3/species/citation/id/"*id*"/region/"*region*"?token="*token
-    end
+    query = "/api/v3/species/citation/id/"*id*"?token="*token
+    return toprocess(query, dict)    
+end
+
+function species_citation(id::Int64,region::String;dict::Bool=false)
+    id = string(id)
+    query = "/api/v3/species/citation/id/"*id*"/region/"*region*"?token="*token
     return toprocess(query, dict)    
 end
 
@@ -47,22 +52,25 @@ Use scientific name or ID. \\
 If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that
 """
-function species_narrative(name::String,region::String="";dict::Bool=false)
-    if region == ""
-        query = "/api/v3/species/narrative/"*name*"?token="*token
-    else
-        query = "/api/v3/species/narrative/"*name*"/region/"*region*"?token="*token
-    end
+function species_narrative(name::String;dict::Bool=false)
+    query = "/api/v3/species/narrative/"*name*"?token="*token
     return toprocess(query, dict)    
 end
 
-function species_narrative(id::Int64,region::String="";dict::Bool=false)
+function species_narrative(name::String,region::String;dict::Bool=false)
+    query = "/api/v3/species/narrative/"*name*"/region/"*region*"?token="*token
+    return toprocess(query, dict)    
+end
+
+function species_narrative(id::Int64;dict::Bool=false)
     id = string(id)
-    if region == ""
-        query = "/api/v3/species/narrative/id/"*id*"?token="*token
-    else
-        query = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
-    end
+    query = "/api/v3/species/narrative/id/"*id*"?token="*token
+    return toprocess(query, dict)    
+end
+
+function species_narrative(id::Int64,region::String;dict::Bool=false)
+    id = string(id)
+    query = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
     return toprocess(query, dict)    
 end
 
