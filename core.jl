@@ -24,3 +24,5 @@ function regions()
     query = "/api/v3/region/list?token="*token
     return toquery(query)
 end
+
+species_by_country()

@@ -26,3 +26,6 @@ function conservation_measure(id::Int64,region::String)
     query = "/api/v3/measures/species/id/"*name*"/region/"*region*"?token="*token
     return toquery(query)
 end
+
+version()
+conservation_measure()

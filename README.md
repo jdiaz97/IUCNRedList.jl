@@ -13,48 +13,95 @@ In some cases, you can call 4 different endpoints from only 1 functions. Thanks 
 
 ### `version()`
 
-IUCN Red List version
+To check what version of the IUCN Red List is driving the API
+
+```julia
+version()
+```
 
 ### `countries()`
 
-Countries
+To get a list of countries
+
+```julia
+countries()
+```
 
 ### `species_by_country()`
 
-Species by country
+To get a list of species by country isocode:
+
+```julia
+species_by_country(isocode::String)
+```
 
 ### `regions()`
 
 Regions
 
+```julia
+regions()
+```
+
 ### `species_count()`
 
-Species Count: Global assessments, Regional assessments.
+Total Species count: Global assessments, Regional assessments.
+
+```julia
+species_count()
+species_count(region::String)
+```
 
 ### `species_citation()`
 
-Species citation, by name: Global assessments, Regional assessments.
+To get the citation for a given species assessment, by name or ID: Global assessments, Regional assessments.
 
-Species citation, by ID:  Global assessments, Regional assessments.
+```julia
+species_citation(name::String)
+species_citation(name::String,region::String)
+species_citation(id::Int64)
+species_citation(id::Int64,region::String)
+```
 
 ### `species_by_category()`
 
-Species by category
+To get a list of species by category
+
+```julia
+species_by_category(category::String)
+```
 
 ### `species_indv()`
 
-Individual Species, by name: Global assessments, Regional assessments.
+To get information about individual species, by name (or synonym) or ID: Global assessments, Regional assessments.
 
-Individual Species by ID: Global assessments, Regional assessments.
+```julia
+species_indv(name::String)
+species_indv(name::String,region::String)
+species_indv(id::Int64)
+species_indv(id::Int64,region::String)
+```
 
 ### `species_narrative()`
 
-Species Narrative information, by name: Global assessments, Regional assessments.
+To get narrative information about individual species by name or ID. Global assessments, Regional assessments.
 
-Species Narrative information, by ID: Global assessments, Regional assessments.
+Please be aware that the text contains HTML markup in some places for formatting purposes.
+
+```julia
+species_narrative(name::String)
+species_narrative(name::String,region::String)
+species_narrative(id::Int64)
+species_narrative(id::Int64,region::String)
+```
 
 ### `conservation_measures()`
 
-Conservation measures, by species name: Global assessments, Regional assessments.
+Species conservation measures information, by name or ID: Global assessments, Regional assessments.
 
-Conservation measures, by species ID: Global assessments, Regional assessments.
+```julia
+conservation_measure(name::String)
+conservation_measure(name::String,region::String)
+conservation_measure(id::Int64)
+conservation_measure(id::Int64,region::String)
+```
