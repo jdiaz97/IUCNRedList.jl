@@ -1,7 +1,15 @@
 include("resources.jl")
 include("token.jl")
 
-## species
+"""
+Get a list of species by country isocode. \n
+If you don't have an isocode, check countries()
+"""
+function species_by_country(isocode::String;dict::Bool=false)
+    query = "/api/v3/country/getspecies/"*isocode*"?token="*token
+    return toprocess(query, dict)
+end
+
 """
 Total Species count. \n
 If region not provided, it will return a global assesment \\
@@ -108,13 +116,4 @@ function species_narrative(id::Int64,region::String;dict::Bool=false)
     id = string(id)
     query = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
     return toprocess(query, dict)    
-end
-
-"""
-Get a list of species by country isocode. \n
-If you don't have an isocode, check countries()
-"""
-function species_by_country(isocode::String;dict::Bool=false)
-    query = "/api/v3/country/getspecies/"*isocode*"?token="*token
-    return toprocess(query, dict)
 end
