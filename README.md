@@ -41,7 +41,7 @@ Species citation, by ID:  Global assessments, Regional assessments.
 
 Species by category
 
-### `species()`
+### `species_indv()`
 
 Individual Species, by name: Global assessments, Regional assessments.
 

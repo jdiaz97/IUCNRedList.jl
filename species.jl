@@ -67,23 +67,23 @@ end
 """
 To get information about individual species via its name, or a synonym.
 """
-function species(name::String;dict::Bool=false)
+function species_indv(name::String;dict::Bool=false)
     query = "/api/v3/species/"*name*"?token="*token
     return toprocess(query, dict)
 end
 
-function species(name::String,region::String;dict::Bool=false)
+function species_indv(name::String,region::String;dict::Bool=false)
     query = "/api/v3/species/"*name*"/region/"*region*"?token="*token
     return toprocess(query, dict)
 end
 
-function species(id::Int64;dict::Bool=false)
+function species_indv(id::Int64;dict::Bool=false)
     id = string(id)
     query = "/api/v3/species/id/"*id*"?token="*token
     return toprocess(query, dict)
 end
 
-function species(id::Int64,region::String;dict::Bool=false)
+function species_indv(id::Int64,region::String;dict::Bool=false)
     id = string(id)
     query = "/api/v3/species/id/"*id*"/region/"*region*"?token="*token
     return toprocess(query, dict)
