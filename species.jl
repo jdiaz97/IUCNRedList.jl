@@ -46,6 +46,42 @@ function species_citation(id::Int64,region::String;dict::Bool=false)
 end
 
 """
+Get a list of species by category. \n
+The possible categories are "DD", "LC", "NT", "VU", "EN", "CR", "EW", "EX", "LR/lc", "LR/nt", "LR/cd". \\
+When querying for "LR/lc", "LR/nt" or "LR/cd" categories, you must omit the slash character. \\
+    For example: "LR/lc" becomes "LRlc".
+"""
+function species_by_category(category::String;dict::Bool=false)
+    query = "/api/v3/species/category/"*category*"?token="*token
+    return toprocess(query, dict)
+end
+
+"""
+To get information about individual species via its name, or a synonym.
+"""
+function species(name::String;dict::Bool=false)
+    query = "/api/v3/species/"*name*"?token="*token
+    return toprocess(query, dict)
+end
+
+function species(name::String,region::String;dict::Bool=false)
+    query = "/api/v3/species/"*name*"/region/"*region*"?token="*token
+    return toprocess(query, dict)
+end
+
+function species(id::Int64;dict::Bool=false)
+    id = string(id)
+    query = "/api/v3/species/id/"*id*"?token="*token
+    return toprocess(query, dict)
+end
+
+function species(id::Int64,region::String;dict::Bool=false)
+    id = string(id)
+    query = "/api/v3/species/id/"*id*"/region/"*region*"?token="*token
+    return toprocess(query, dict)
+end
+
+"""
 Get narrative information about individual species. \n
 Please be aware that the text contains HTML markup in some places for formatting purposes. \\
 Use scientific name or ID. \\
@@ -80,16 +116,5 @@ If you don't have an isocode, check countries()
 """
 function species_by_country(isocode::String;dict::Bool=false)
     query = "/api/v3/country/getspecies/"*isocode*"?token="*token
-    return toprocess(query, dict)
-end
-
-"""
-Get a list of species by category. \n
-The possible categories are "DD", "LC", "NT", "VU", "EN", "CR", "EW", "EX", "LR/lc", "LR/nt", "LR/cd". \\
-When querying for "LR/lc", "LR/nt" or "LR/cd" categories, you must omit the slash character. \\
-    For example: "LR/lc" becomes "LRlc".
-"""
-function species_by_category(category::String;dict::Bool=false)
-    query = "/api/v3/species/category/"*category*"?token="*token
     return toprocess(query, dict)
 end
