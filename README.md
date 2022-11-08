@@ -52,3 +52,9 @@ Individual Species by ID: Global assessments, Regional assessments.
 Species Narrative information, by name: Global assessments, Regional assessments.
 
 Species Narrative information, by ID: Global assessments, Regional assessments.
+
+### `conservation_measures()`
+
+Conservation measures, by species name: Global assessments, Regional assessments.
+
+Conservation measures, by species ID: Global assessments, Regional assessments.
