@@ -10,8 +10,8 @@ function test()
     regions()
     # species
     species_count("europe")
-    species_citation("Quercus robur","europe"; dict = true)
-    species_narrative("Luma apiculata", dict = true)
+    species_citation("Quercus robur","europe")
+    species_narrative("Luma apiculata")
     ## if you got here, then:
     print("Test successful")    
 end
@@ -19,5 +19,7 @@ end
 test()
 
 ## all running perfectly
+
+
 
 

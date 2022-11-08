@@ -6,21 +6,21 @@ Check what version of the IUCN Red List is driving the API:
 """
 function version()
     query = "/api/v3/version"
-    return toprocess(query, true)
+    return toquery(query)
 end
 
 """
 Get a list of countries and the isocodes.
 """
-function countries(;dict::Bool=false)
+function countries()
     query = "/api/v3/country/list?token="*token
-    return toprocess(query, dict)
+    return toquery(query)
 end
 
 """
 Get a list of regions
 """
-function regions(;dict::Bool=false)
+function regions()
     query = "/api/v3/region/list?token="*token
-    return toprocess(query, dict)
+    return toquery(query)
 end
