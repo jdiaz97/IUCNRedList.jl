@@ -9,6 +9,12 @@ Implements all* of the functionalities of the IUCN Red List API in an easy to us
 
 In some cases, you can call 4 different endpoints from only 1 functions. Thanks to multiple dispatch.
 
+# How it works
+
+Check the multiple methods of the function. If region is not added as an argument then it will return a global assessment.
+
+You can use ID or Name (scientific) of the species.
+
 # Functions
 
 ## Helpers
@@ -49,7 +55,7 @@ regions()
 
 ### `species_all()`
 
-Total Species published, as well as their Red List Categor: Global assessments, Regional assessments.
+Total Species published, as well as their Red List Category.
 
 ```julia
 species_all(page::Int64)
@@ -58,7 +64,7 @@ species_all(page::Int64,region::String)
 
 ### `species_count()`
 
-Total Species count: Global assessments, Regional assessments.
+Total Species count.
 
 ```julia
 species_count()
@@ -67,7 +73,7 @@ species_count(region::String)
 
 ### `species_citation()`
 
-To get the citation for a given species assessment, by name or ID: Global assessments, Regional assessments.
+To get the citation for a given species assessment.
 
 ```julia
 species_citation(name::String)
@@ -86,7 +92,7 @@ species_by_category(category::String)
 
 ### `species_indv()`
 
-To get information about individual species, by name (or synonym) or ID: Global assessments, Regional assessments.
+To get information about individual species.
 
 ```julia
 species_indv(name::String)
@@ -97,7 +103,7 @@ species_indv(id::Int64,region::String)
 
 ### `species_narrative()`
 
-To get narrative information about individual species by name or ID. Global assessments, Regional assessments.
+To get narrative information about individual species.
 
 Please be aware that the text contains HTML markup in some places for formatting purposes.
 
@@ -140,7 +146,7 @@ species_history(id::Int64,region::String)
 
 ## Other data
 
-### `threatss()`
+### `threats()`
 
 ```julia
 threats(name::String)
@@ -149,7 +155,7 @@ threats(id::Int64)
 threats(id::Int64,region::String)
 ```
 
-### `habitatss()`
+### `habitats()`
 
 ```julia
 habitats(name::String)
@@ -160,8 +166,6 @@ habitats(id::Int64,region::String)
 
 ### `conservation_measures()`
 
-Species conservation measures information, by name or ID: Global assessments, Regional assessments.
-
 ```julia
 conservation_measure(name::String)
 conservation_measure(name::String,region::String)
@@ -169,7 +173,7 @@ conservation_measure(id::Int64)
 conservation_measure(id::Int64,region::String)
 ```
 
-### `growth_formss()`
+### `growth_forms()`
 
 ```julia
 growth_forms(name::String)
