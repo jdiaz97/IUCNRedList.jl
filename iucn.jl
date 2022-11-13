@@ -20,6 +20,15 @@ function countries()
 end
 
 """
+Get a list of species by country isocode. \n
+If you don't have an isocode, check countries()
+"""
+function species_by_country(isocode::String)
+    query = "/api/v3/country/getspecies/"*isocode*"?token="*token
+    return toquery(query)
+end
+
+"""
 Get a list of regions (region identifiers)
 """
 function regions()

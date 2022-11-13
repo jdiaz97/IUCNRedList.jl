@@ -2,16 +2,19 @@ include("resources.jl")
 include("token.jl")
 
 """
-To get a list of all the species published, as well as the Red List category:
+To get a list of all the species published, as well as the Red List category. \n 
+Returns 10,000 records per call, so you need to send multiple requests, based on pages. \\
+Index starts at 0.
 """
+function species_all(page::Int64)
+    page = string(page)
+    query = "/api/v3/species/page/"*page*"?token="*token
+    return toquery(query)
+end
 
-
-"""
-Get a list of species by country isocode. \n
-If you don't have an isocode, check countries()
-"""
-function species_by_country(isocode::String)
-    query = "/api/v3/country/getspecies/"*isocode*"?token="*token
+function species_all(page::Int64,region::String)
+    page = string(page)
+    query = "/api/v3/species/region/"*region*"/page/"*page*"?token="*token
     return toquery(query)
 end
 
@@ -120,5 +123,72 @@ end
 function species_narrative(id::Int64,region::String)
     id = string(id)
     query = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
+    return toquery(query)    
+end
+
+"""
+Can be used to either gain information about synonyms via an accepted species name, or vice versa i.e. 
+this call tells you if there are synonyms for the species name, or whether it's a synonym of an accepted name
+"""
+function species_synonyms(name::String)
+    query = "/api/v3/species/synonym/"*name*"token="*query
+    return toquery(query)
+end
+
+"""
+To get the list of common names per species.
+"""
+function species_common_names(name::String)
+    query = "/api/v3/species/common_names/"*name*"token="*query
+    return toquery(query)
+end
+
+"""
+To get a list of countries of occurrence by species name or ID.
+"""
+function species_occurrence(name::String)
+    query = "/api/v3/species/countries/"*name*"?token="*token
+    return toquery(query)    
+end
+
+function species_occurrence(name::String,region::String)
+    query = "/api/v3/species/countries/"*name*"/region/"*region*"?token="*token
+    return toquery(query)    
+end
+
+function species_occurrence(id::Int64)
+    id = string(id)
+    query = "/api/v3/species/countries/id/"*id*"?token="*token
+    return toquery(query)    
+end
+
+function species_occurrence(id::Int64,region::String)
+    id = string(id)
+    query = "/api/v3/species/countries/id/"*id*"/region/"*region*"?token="*token
+    return toquery(query)    
+end
+
+"""
+To get a list of historical assessments by species name or ID (including the current listing).
+"""
+function species_history(name::String)
+    query = "/api/v3/species/history/"*name*"?token="*token
+    return toquery(query)    
+end
+
+function species_history(name::String,region::String)
+    query = "/api/v3/species/history/"*name*"/region/"*region*"?token="*token
+    return toquery(query)    
+end
+
+function species_history(id::Int64)
+    id = string(id)
+    query = "/api/v3/species/history/id/"*id*"?token="*token
+    return toquery(query)    
+end
+
+function species_history(id::Int64,region::String)
+    id = string(id)
+    query = "/api/v3/species/history/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)    
 end

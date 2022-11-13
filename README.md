@@ -31,7 +31,7 @@ countries()
 
 ### `species_by_country()`
 
-To get a list of species by country isocode:
+To get a list of species by country isocode
 
 ```julia
 species_by_country(isocode::String)
@@ -39,13 +39,22 @@ species_by_country(isocode::String)
 
 ### `regions()`
 
-Regions
+Region identifiers
 
 ```julia
 regions()
 ```
 
 ## Species details
+
+### `species_all()`
+
+Total Species published, as well as their Red List Categor: Global assessments, Regional assessments.
+
+```julia
+species_all(page::Int64)
+species_all(page::Int64,region::String)
+```
 
 ### `species_count()`
 
@@ -99,7 +108,55 @@ species_narrative(id::Int64)
 species_narrative(id::Int64,region::String)
 ```
 
+### `species_synonyms()`
+
+```julia
+species_synonyms(name::String)
+```
+
+### `species_common_names()`
+
+```julia
+species_common_names(name::String)
+```
+
+### `species_occurence()`
+
+```julia
+species_occurence(name::String)
+species_occurence(name::String,region::String)
+species_occurence(id::Int64)
+species_occurence(id::Int64,region::String)
+```
+
+### `species_history()`
+
+```julia
+species_history(name::String)
+species_history(name::String,region::String)
+species_history(id::Int64)
+species_history(id::Int64,region::String)
+```
+
 ## Other data
+
+### `threatss()`
+
+```julia
+threats(name::String)
+threats(name::String,region::String)
+threats(id::Int64)
+threats(id::Int64,region::String)
+```
+
+### `habitatss()`
+
+```julia
+habitats(name::String)
+habitats(name::String,region::String)
+habitats(id::Int64)
+habitats(id::Int64,region::String)
+```
 
 ### `conservation_measures()`
 
@@ -110,4 +167,20 @@ conservation_measure(name::String)
 conservation_measure(name::String,region::String)
 conservation_measure(id::Int64)
 conservation_measure(id::Int64,region::String)
+```
+
+### `growth_formss()`
+
+```julia
+growth_forms(name::String)
+growth_forms(name::String,region::String)
+growth_forms(id::Int64)
+growth_forms(id::Int64,region::String)
+```
+
+### `comprehensive_groups()`
+
+```julia
+comprehensive_groups()
+comprehensive_groups(group::String)
 ```
