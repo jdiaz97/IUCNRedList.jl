@@ -8,13 +8,13 @@ Index starts at 0.
 """
 function species_all(page::Int64)
     page = string(page)
-    query = "/api/v3/species/page/"*page*"?token="*token
+    query::String = "/api/v3/species/page/"*page*"?token="*token
     return toquery(query)
 end
 
 function species_all(page::Int64,region::String)
     page = string(page)
-    query = "/api/v3/species/region/"*region*"/page/"*page*"?token="*token
+    query::String = "/api/v3/species/region/"*region*"/page/"*page*"?token="*token
     return toquery(query)
 end
 
@@ -24,12 +24,12 @@ If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that. \\
 """
 function species_count()
-    query = "/api/v3/speciescount?token="*token
+    query::String = "/api/v3/speciescount?token="*token
     return toquery(query)
 end
 
 function species_count(region::String)
-    query = "/api/v3/speciescount/region/"*region*"?token="*token
+    query::String = "/api/v3/speciescount/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -40,24 +40,24 @@ If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that 
 """
 function species_citation(name::String)
-    query = "/api/v3/species/citation/"*name*"?token="*token
+    query::String = "/api/v3/species/citation/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_citation(name::String,region::String)
-    query = "/api/v3/species/citation/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/citation/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
 function species_citation(id::Int64)
     id = string(id)
-    query = "/api/v3/species/citation/id/"*id*"?token="*token
+    query::String = "/api/v3/species/citation/id/"*id*"?token="*token
     return toquery(query)    
 end
 
 function species_citation(id::Int64,region::String)
     id = string(id)
-    query = "/api/v3/species/citation/id/"*id*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/citation/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -68,7 +68,7 @@ When querying for "LR/lc", "LR/nt" or "LR/cd" categories, you must omit the slas
     For example: "LR/lc" becomes "LRlc".
 """
 function species_by_category(category::String)
-    query = "/api/v3/species/category/"*category*"?token="*token
+    query::String = "/api/v3/species/category/"*category*"?token="*token
     return toquery(query)
 end
 
@@ -76,24 +76,24 @@ end
 To get information about individual species via its name, or a synonym.
 """
 function species_indv(name::String)
-    query = "/api/v3/species/"*name*"?token="*token
+    query::String = "/api/v3/species/"*name*"?token="*token
     return toquery(query)
 end
 
 function species_indv(name::String,region::String)
-    query = "/api/v3/species/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/"*name*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
 function species_indv(id::Int64)
     id = string(id)
-    query = "/api/v3/species/id/"*id*"?token="*token
+    query::String = "/api/v3/species/id/"*id*"?token="*token
     return toquery(query)
 end
 
 function species_indv(id::Int64,region::String)
     id = string(id)
-    query = "/api/v3/species/id/"*id*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -105,24 +105,24 @@ If region not provided, it will return a global assesment \\
 You have to use the correct region identifier, check regions() for that
 """
 function species_narrative(name::String)
-    query = "/api/v3/species/narrative/"*name*"?token="*token
+    query::String = "/api/v3/species/narrative/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_narrative(name::String,region::String)
-    query = "/api/v3/species/narrative/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/narrative/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
 function species_narrative(id::Int64)
     id = string(id)
-    query = "/api/v3/species/narrative/id/"*id*"?token="*token
+    query::String = "/api/v3/species/narrative/id/"*id*"?token="*token
     return toquery(query)    
 end
 
 function species_narrative(id::Int64,region::String)
     id = string(id)
-    query = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -131,7 +131,7 @@ Can be used to either gain information about synonyms via an accepted species na
 this call tells you if there are synonyms for the species name, or whether it's a synonym of an accepted name
 """
 function species_synonyms(name::String)
-    query = "/api/v3/species/synonym/"*name*"token="*query
+    query::String = "/api/v3/species/synonym/"*name*"token="*query
     return toquery(query)
 end
 
@@ -139,7 +139,7 @@ end
 To get the list of common names per species.
 """
 function species_common_names(name::String)
-    query = "/api/v3/species/common_names/"*name*"token="*query
+    query::String = "/api/v3/species/common_names/"*name*"token="*query
     return toquery(query)
 end
 
@@ -147,24 +147,24 @@ end
 To get a list of countries of occurrence by species name or ID.
 """
 function species_occurrence(name::String)
-    query = "/api/v3/species/countries/"*name*"?token="*token
+    query::String = "/api/v3/species/countries/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_occurrence(name::String,region::String)
-    query = "/api/v3/species/countries/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/countries/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
 function species_occurrence(id::Int64)
     id = string(id)
-    query = "/api/v3/species/countries/id/"*id*"?token="*token
+    query::String = "/api/v3/species/countries/id/"*id*"?token="*token
     return toquery(query)    
 end
 
 function species_occurrence(id::Int64,region::String)
     id = string(id)
-    query = "/api/v3/species/countries/id/"*id*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/countries/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -172,23 +172,23 @@ end
 To get a list of historical assessments by species name or ID (including the current listing).
 """
 function species_history(name::String)
-    query = "/api/v3/species/history/"*name*"?token="*token
+    query::String = "/api/v3/species/history/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_history(name::String,region::String)
-    query = "/api/v3/species/history/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/history/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
 function species_history(id::Int64)
     id = string(id)
-    query = "/api/v3/species/history/id/"*id*"?token="*token
+    query::String = "/api/v3/species/history/id/"*id*"?token="*token
     return toquery(query)    
 end
 
 function species_history(id::Int64,region::String)
     id = string(id)
-    query = "/api/v3/species/history/id/"*id*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/history/id/"*id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
