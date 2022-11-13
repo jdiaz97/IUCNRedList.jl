@@ -188,3 +188,13 @@ growth_forms(id::Int64,region::String)
 comprehensive_groups()
 comprehensive_groups(group::String)
 ```
+
+## Native functions
+
+### `melt_dict()`
+
+This will reorganize the dictionary, merging the result with the original dictionary. Currently it will affect the arugment with a side effect, this is a bug that will be fixed.
+
+```julia
+melt_dict(dict::Dict)
+```

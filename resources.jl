@@ -6,6 +6,12 @@ function toquery(url::String)
     return JSON.parse(String(a.body))
 end
 
-## melt_dict
-
-## iucn_table
+"""
+This will get the actual result from the query and merge it with the rest of the dictionary
+"""
+function melt_dict(dict::Dict)
+    result = dict["result"][1]
+    dict = delete!(dict,"result")
+    melted = merge(dict,result)
+    return melted
+end

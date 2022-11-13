@@ -1,6 +1,5 @@
-include("species.jl")
-include("core.jl")
-include("token.jl") ## token = 'YOUR TOKEN'
+include("iucn.jl")
+include("token.jl") ## token = "YOUR TOKEN"
 
 function test()
     # core
@@ -18,7 +17,6 @@ end
 
 test()
 
-## all running perfectly
 
 
 
