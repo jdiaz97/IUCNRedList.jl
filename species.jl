@@ -2,6 +2,11 @@ include("resources.jl")
 include("token.jl")
 
 """
+To get a list of all the species published, as well as the Red List category:
+"""
+
+
+"""
 Get a list of species by country isocode. \n
 If you don't have an isocode, check countries()
 """

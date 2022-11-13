@@ -3,13 +3,15 @@ API Wrapper for IUCN Red List.
 
 Are you a data scientist and are you working in biodiversity? you might find this useful.
 
-## What this does
+# What this does
 
 Implements all* of the functionalities of the IUCN Red List API in an easy to use way.
 
 In some cases, you can call 4 different endpoints from only 1 functions. Thanks to multiple dispatch.
 
-## Functions
+# Functions
+
+## Helpers
 
 ### `version()`
 
@@ -42,6 +44,8 @@ Regions
 ```julia
 regions()
 ```
+
+## Species details
 
 ### `species_count()`
 
@@ -94,6 +98,8 @@ species_narrative(name::String,region::String)
 species_narrative(id::Int64)
 species_narrative(id::Int64,region::String)
 ```
+
+## Other data
 
 ### `conservation_measures()`
 
