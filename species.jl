@@ -131,7 +131,7 @@ Can be used to either gain information about synonyms via an accepted species na
 this call tells you if there are synonyms for the species name, or whether it's a synonym of an accepted name
 """
 function species_synonyms(name::String)
-    query::String = "/api/v3/species/synonym/"*name*"token="*query
+    query::String = "/api/v3/species/synonym/"*name*"?token="*token
     return toquery(query)
 end
 
@@ -139,7 +139,7 @@ end
 To get the list of common names per species.
 """
 function species_common_names(name::String)
-    query::String = "/api/v3/species/common_names/"*name*"token="*query
+    query::String = "/api/v3/species/common_names/"*name*"?token="*token
     return toquery(query)
 end
 

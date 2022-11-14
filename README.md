@@ -126,13 +126,13 @@ species_synonyms(name::String)
 species_common_names(name::String)
 ```
 
-### `species_occurence()`
+### `species_occurrence()`
 
 ```julia
-species_occurence(name::String)
-species_occurence(name::String,region::String)
-species_occurence(id::Int64)
-species_occurence(id::Int64,region::String)
+species_occurrence(name::String)
+species_occurrence(name::String,region::String)
+species_occurrence(id::Int64)
+species_occurrence(id::Int64,region::String)
 ```
 
 ### `species_history()`

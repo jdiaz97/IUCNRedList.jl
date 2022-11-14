@@ -16,8 +16,3 @@ function test()
 end
 
 test()
-
-
-
-
-
