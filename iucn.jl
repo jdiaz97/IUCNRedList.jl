@@ -51,14 +51,14 @@ function threats(name::String,region::String)
 end
 
 function threats(id::Int64)
-    id = String(id)
-    query::String = "/api/v3/threats/species/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/threats/species/id/"*string_id*"?token="*token
     return toquery(query)
 end
 
 function threats(id::Int64,region::String)
-    id = String(id)
-    query::String = "/api/v3/threats/species/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/threats/species/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -77,14 +77,14 @@ function habitats(name::String,region::String)
 end
 
 function habitats(id::Int64)
-    id = String(id)
-    query::String = "/api/v3/habitats/species/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/habitats/species/id/"*string_id*"?token="*token
     return toquery(query)
 end
 
 function habitats(id::Int64,region::String)
-    id = String(id)
-    query::String = "/api/v3/habitats/species/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/habitats/species/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -103,14 +103,14 @@ function conservation_measure(name::String,region::String)
 end
 
 function conservation_measure(id::Int64)
-    id = String(id)
-    query::String = "/api/v3/measures/species/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/measures/species/id/"*string_id*"?token="*token
     return toquery(query)
 end
 
 function conservation_measure(id::Int64,region::String)
-    id = String(id)
-    query::String = "/api/v3/measures/species/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/measures/species/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -129,14 +129,14 @@ function growth_forms(name::String,region::String)
 end
 
 function growth_forms(id::Int64)
-    id = String(id)
-    query::String = "/api/v3/growth_forms/species/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/growth_forms/species/id/"*string_id*"?token="*token
     return toquery(query)
 end
 
 function growth_forms(id::Int64,region::String)
-    id = String(id)
-    query::String = "/api/v3/growth_forms/species/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/growth_forms/species/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 

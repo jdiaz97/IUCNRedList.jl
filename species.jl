@@ -50,14 +50,14 @@ function species_citation(name::String,region::String)
 end
 
 function species_citation(id::Int64)
-    id = string(id)
-    query::String = "/api/v3/species/citation/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/citation/id/"*string_id*"?token="*token
     return toquery(query)    
 end
 
 function species_citation(id::Int64,region::String)
-    id = string(id)
-    query::String = "/api/v3/species/citation/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/citation/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -86,14 +86,14 @@ function species_indv(name::String,region::String)
 end
 
 function species_indv(id::Int64)
-    id = string(id)
-    query::String = "/api/v3/species/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/id/"*string_id*"?token="*token
     return toquery(query)
 end
 
 function species_indv(id::Int64,region::String)
-    id = string(id)
-    query::String = "/api/v3/species/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)
 end
 
@@ -115,14 +115,14 @@ function species_narrative(name::String,region::String)
 end
 
 function species_narrative(id::Int64)
-    id = string(id)
-    query::String = "/api/v3/species/narrative/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/narrative/id/"*string_id*"?token="*token
     return toquery(query)    
 end
 
 function species_narrative(id::Int64,region::String)
-    id = string(id)
-    query::String = "/api/v3/species/narrative/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/narrative/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -157,14 +157,14 @@ function species_occurrence(name::String,region::String)
 end
 
 function species_occurrence(id::Int64)
-    id = string(id)
-    query::String = "/api/v3/species/countries/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/countries/id/"*string_id*"?token="*token
     return toquery(query)    
 end
 
 function species_occurrence(id::Int64,region::String)
-    id = string(id)
-    query::String = "/api/v3/species/countries/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/countries/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -182,13 +182,13 @@ function species_history(name::String,region::String)
 end
 
 function species_history(id::Int64)
-    id = string(id)
-    query::String = "/api/v3/species/history/id/"*id*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/history/id/"*string_id*"?token="*token
     return toquery(query)    
 end
 
 function species_history(id::Int64,region::String)
-    id = string(id)
-    query::String = "/api/v3/species/history/id/"*id*"/region/"*region*"?token="*token
+    string_id::String = string(id)
+    query::String = "/api/v3/species/history/id/"*string_id*"/region/"*region*"?token="*token
     return toquery(query)    
 end
