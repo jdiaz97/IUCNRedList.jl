@@ -11,6 +11,12 @@ In some cases, you can call 4 different endpoints from only 1 functions. Thanks 
 
 # How it works
 
+Define a global variable 
+
+```julia
+token::String = "Your Token
+```
+
 Check the multiple methods of the function. If region is not added as an argument then it will return a global assessment.
 
 You can use ID or Name (scientific) of the species.
@@ -198,3 +204,13 @@ This will reorganize the dictionary, merging the result with the original dictio
 ```julia
 melt_dict(dict::Dict)
 ```
+
+# Usage
+
+```julia
+res = species_narrative("Quercus robur")
+res = melt_dict(res)
+
+DataFrame(res) # 1×11 DataFrame
+```
+

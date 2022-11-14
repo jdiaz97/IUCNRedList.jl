@@ -2,8 +2,8 @@ using HTTP
 using JSON
 
 function toquery(url::String)
-    a = HTTP.get("https://apiv3.iucnredlist.org"*url)
-    return JSON.parse(String(a.body))
+    response = HTTP.get("https://apiv3.iucnredlist.org"*url)
+    return JSON.parse(String(response.body))
 end
 
 """
