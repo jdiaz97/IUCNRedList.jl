@@ -5,21 +5,25 @@ Are you a data scientist and are you working in biodiversity? you might find thi
 
 # What this does
 
-Implements all* of the functionalities of the IUCN Red List API in an easy to use way.
+Implements all of the functionalities of the IUCN Red List API in an easy to use way.
 
 In some cases, you can call 4 different endpoints from only 1 functions. Thanks to multiple dispatch.
 
 # How it works
 
-Define a global variable 
+Define your token as a global variable.  
 
 ```julia
 token::String = "Your Token
 ```
 
+(If you don't have a token, you can get it [here](https://apiv3.iucnredlist.org/api/v3/token).)
+
 Check the multiple methods of the function. If region is not added as an argument then it will return a global assessment.
 
 You can use ID or Name (scientific) of the species.
+
+For more details, you can check the official [API Reference](https://apiv3.iucnredlist.org/api/v3/docs). But the functions are pretty well commented in the source code.
 
 # Functions
 
