@@ -193,7 +193,7 @@ comprehensive_groups(group::String)
 
 ### `melt_dict()`
 
-This will reorganize the dictionary, merging the result with the original dictionary. Currently it will affect the argument as a side effect, this is a bug that will be fixed.
+This will reorganize the dictionary, merging the result with the original dictionary. 
 
 ```julia
 melt_dict(dict::Dict)
