@@ -1,5 +1,7 @@
+module IUCN
+
 include("resources.jl")
-include("token.jl")
+# include("token.jl")
 include("species.jl")
 
 ## Main Functions
@@ -153,4 +155,6 @@ end
 function comprehensive_groups(group::String)
     query::String = "/api/v3/comp-group/getspecies/"*group*"?token="*token
     return toquery(query)
+end
+
 end
