@@ -212,6 +212,10 @@ melt_dict(dict::Dict)
 # Usage
 
 ```julia
+using IUCN
+
+token::String = "Your Token" ## As a global variable
+
 res = species_narrative("Quercus robur")
 res = melt_dict(res)
 
