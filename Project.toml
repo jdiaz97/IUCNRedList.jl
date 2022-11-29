@@ -1,7 +1,7 @@
 name = "IUCN"
 uuid = "974fe673-6e6b-4833-bfec-235320a1a9d9"
 authors = ["jdiaz97 <josediazrrnn@gmail.com>"]
-version = "0.1.0"
+version = "0.7.0"
 
 [deps]
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
