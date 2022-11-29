@@ -1,7 +1,9 @@
 module IUCN
 
+using HTTP
+using JSON
+
 include("resources.jl")
-# include("token.jl")
 include("species.jl")
 
 ## Main Functions

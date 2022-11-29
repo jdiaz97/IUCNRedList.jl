@@ -1,6 +1,3 @@
-using HTTP
-using JSON
-
 function toquery(url::String)
     response = HTTP.get("https://apiv3.iucnredlist.org"*url)
     return JSON.parse(String(response.body))

@@ -1,6 +1,3 @@
-include("resources.jl")
-include("token.jl")
-
 """
 To get a list of all the species published, as well as the Red List category. \n 
 Returns 10,000 records per call, so you need to send multiple requests, based on pages. \\
