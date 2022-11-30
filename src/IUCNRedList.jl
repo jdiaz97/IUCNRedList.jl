@@ -7,9 +7,16 @@ export version, countries, species_by_country, region, threats, habitats, conser
 export melt_dict, toquery
 export species_all, species_count, species_citation, species_by_category, species_indv, species_narrative
 export species_synonyms, species_common_names, species_occurrence, species_history
+export set_token
+export token
 
 include("resources.jl")
 include("species.jl")
+global token
+
+function set_token(IUCNtoken::String)
+    global token = IUCNtoken
+end
 
 ## Main Functions
 """

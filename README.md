@@ -214,7 +214,7 @@ melt_dict(dict::Dict)
 ```julia
 using IUCNRedList
 
-token::String = "Your Token" ## As a global variable
+set_token("YOUR TOKEN")
 
 res = species_narrative("Quercus robur")
 res = melt_dict(res)
