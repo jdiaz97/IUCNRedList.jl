@@ -212,7 +212,7 @@ melt_dict(dict::Dict)
 # Usage
 
 ```julia
-using IUCN
+using IUCNRedList
 
 token::String = "Your Token" ## As a global variable
 
