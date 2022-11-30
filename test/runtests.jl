@@ -1,2 +1,2 @@
-include("../src/IUCN.jl")
+include("../src/IUCNRedList.jl")
 

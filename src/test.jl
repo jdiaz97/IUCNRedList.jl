@@ -1,4 +1,4 @@
-include("iucn.jl")
+include("iucnredlist.jl")
 include("token.jl") ## token = "YOUR TOKEN"
 
 function test()
@@ -14,8 +14,3 @@ function test()
     ## if you got here, then:
     print("Test successful")    
 end
-
-res = species_narrative("Quercus robur")
-res = melt_dict(res)
-
-DataFrame(res)

@@ -3,6 +3,11 @@ module IUCN
 using HTTP
 using JSON
 
+export version, countries, species_by_country, region, threats, habitats, conservation_measure, growth_forms, comprehensive_groups
+export melt_dict, toquery
+export species_all, species_count, species_citation, species_by_category, species_indv, species_narrative
+export species_synonyms, species_common_names, species_occurrence, species_history
+
 include("resources.jl")
 include("species.jl")
 
