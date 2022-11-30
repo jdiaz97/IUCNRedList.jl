@@ -11,10 +11,10 @@ In some cases, you can call 4 different endpoints from only 1 functions. Thanks 
 
 # How it works
 
-Define your token as a global variable.  
+Set your token, then use all of the wonderful functionality.
 
 ```julia
-token::String = "Your Token"
+set_token("Your Token")
 ```
 
 (If you don't have a token, you can get it [here](https://apiv3.iucnredlist.org/api/v3/token))
