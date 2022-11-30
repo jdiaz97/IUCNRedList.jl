@@ -1,4 +1,4 @@
-# IUCN.jl
+# IUCNRedList.jl
 API Wrapper for IUCN Red List. 
 
 Are you a data scientist and are you working in biodiversity? you might find this useful.
@@ -17,7 +17,7 @@ Define your token as a global variable.
 token::String = "Your Token"
 ```
 
-(If you don't have a token, you can get it [here](https://apiv3.iucnredlist.org/api/v3/token).)
+(If you don't have a token, you can get it [here](https://apiv3.iucnredlist.org/api/v3/token))
 
 Check the multiple methods of the function. If region is not added as an argument then it will return a global assessment.
 
