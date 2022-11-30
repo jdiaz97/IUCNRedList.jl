@@ -1,4 +1,4 @@
-module IUCN
+module IUCNRedList
 
 using HTTP
 using JSON
