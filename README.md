@@ -216,8 +216,11 @@ using IUCNRedList
 
 set_token("YOUR TOKEN")
 
-res = species_narrative("Quercus robur")
-res = melt_dict(res)
+res = species_narrative("Quercus robur") # here you have the useful information
+res = melt_dict(res) # here you reorder the information more nicely
+
+# I like to see the data as dataframes 
+using DataFrames
 
 DataFrame(res) # 1×11 DataFrame
 ```
