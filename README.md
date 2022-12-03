@@ -1,13 +1,13 @@
 # IUCNRedList.jl
 API Wrapper for IUCN Red List. 
 
-Are you a data scientist and are you working in biodiversity? you might find this useful.
+Are you a data scientist and you are working in biodiversity? you might find this useful.
 
 # What this does
 
 Implements all of the functionalities of the IUCN Red List API in an easy to use way.
 
-In some cases, you can call 4 different endpoints from only 1 functions. Thanks to multiple dispatch.
+In some cases, you can call 4 different endpoints from only 1 function, thanks to multiple dispatch.
 
 # How it works
 
@@ -19,11 +19,11 @@ set_token("Your Token")
 
 (If you don't have a token, you can get it [here](https://apiv3.iucnredlist.org/api/v3/token))
 
-Check the multiple methods of the function. If region is not added as an argument then it will return a global assessment.
+Check the multiple methods of the functions. If region is not added as an argument then it will return a global assessment.
 
 You can use ID or Name (scientific) of the species.
 
-For more details, you can check the official [API Reference](https://apiv3.iucnredlist.org/api/v3/docs). But the functions are pretty well commented in the source code.
+For more details, you can check the official [API Reference](https://apiv3.iucnredlist.org/api/v3/docs). Nevertheless the functions are pretty well commented in the source code, so pretty much everything you need is here.
 
 # Functions
 
@@ -207,6 +207,14 @@ This will reorganize the dictionary, merging the result with the original dictio
 
 ```julia
 melt_dict(dict::Dict)
+```
+
+### `set_token`
+
+This will give you acess to the API funcionalities
+
+```julia
+set_token(IUCNtoken::String)
 ```
 
 # Usage
