@@ -211,7 +211,7 @@ melt_dict(dict::Dict)
 
 ### `set_token`
 
-This will give you acess to the API funcionalities
+This will give you access to the API funcionalities
 
 ```julia
 set_token(IUCNtoken::String)

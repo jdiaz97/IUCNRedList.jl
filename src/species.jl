@@ -144,12 +144,12 @@ end
 To get a list of countries of occurrence by species name or ID.
 """
 function species_occurrence(name::String)
-    query::String = "/api/v3/species/countries/"*name*"?token="*token
+    query::String = "/api/v3/species/countries/name/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_occurrence(name::String,region::String)
-    query::String = "/api/v3/species/countries/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/countries/name/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
@@ -169,12 +169,12 @@ end
 To get a list of historical assessments by species name or ID (including the current listing).
 """
 function species_history(name::String)
-    query::String = "/api/v3/species/history/"*name*"?token="*token
+    query::String = "/api/v3/species/history/name/"*name*"?token="*token
     return toquery(query)    
 end
 
 function species_history(name::String,region::String)
-    query::String = "/api/v3/species/history/"*name*"/region/"*region*"?token="*token
+    query::String = "/api/v3/species/history/name/"*name*"/region/"*region*"?token="*token
     return toquery(query)    
 end
 
