@@ -1,6 +1,8 @@
 # IUCNRedList.jl
 API Wrapper for IUCN Red List. 
 
+![version](https://img.shields.io/github/v/tag/jdiaz97/IUCNRedList.jl?sort=semver&style=flat-square)
+
 Are you a data scientist and you are working in biodiversity? you might find this useful.
 
 # What this does
